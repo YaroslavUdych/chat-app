@@ -1,0 +1,25 @@
+$color-bg-main: #f9f9f9;
+$color-bg-secondary: #ffffff;
+$color-border: #e5e5e5;
+$color-text-primary: #333333;
+$color-text-secondary: #ffffff;
+$color-chat-bg: #e6e6e6;
+$color-chat-bg-user: #d4e2fc;
+$color-button-bg: #0078d4;
+$color-button-hover: #005fa3;
+$color-input-bg: transparent;
+$color-input-border: #0078d4;
+
+$theme-light: (
+	bg-main: $color-bg-main,
+	bg-secondary: $color-bg-secondary,
+	border: $color-border,
+	text-primary: $color-text-primary,
+	text-secondary: $color-text-secondary,
+	chat-bg: $color-chat-bg,
+	chat-bg-user: $color-chat-bg-user,
+	button-bg: $color-button-bg,
+	button-hover: $color-button-hover,
+	input-bg: $color-input-bg,
+	input-border: $color-input-border,
+);

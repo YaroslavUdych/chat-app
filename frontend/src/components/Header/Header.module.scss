@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '../../styles/Colors.scss' as *;
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem;
+	background-color: map.get($theme-light, bg-secondary);
+	border-bottom: 1px solid map.get($theme-light, border);
+	color: map.get($theme-light, text-primary);
+
+	.toggleButton {
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: map.get($theme-light, text-primary);
+
+		&:hover {
+			color: map.get($theme-light, button-hover);
+		}
+	}
+}

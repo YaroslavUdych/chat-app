@@ -1,0 +1,128 @@
+@use 'sass:map';
+@use '../../Styles/Colors.scss' as *;
+
+.sidebar {
+	width: 300px;
+	background-color: map.get($theme-light, bg-main);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem 0;
+	border-right: 1px solid map.get($theme-light, border);
+
+	.searchInput {
+		margin: 0 1rem;
+		padding: 0.5rem;
+		outline: none;
+		border: none;
+		background-color: map.get($theme-light, input-bg);
+		border-bottom: 1px solid map.get($theme-light, input-border);
+
+		&:focus {
+			border-bottom: 1px solid map.get($theme-light, button-hover);
+		}
+	}
+
+	.chatList {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		flex: 1;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		overflow-y: auto;
+
+		.noChatMessage {
+			align-self: center;
+			margin-top: auto;
+			margin-bottom: auto;
+			text-align: center;
+		}
+
+		.chatItem {
+			padding: 0.5rem 1rem;
+			border-bottom: 1px solid map.get($theme-light, border);
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 1rem;
+
+			.profilePicture {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+			}
+
+			&:hover {
+				background-color: map.get($theme-light, chat-bg);
+			}
+
+			.chatName {
+				font-size: 1rem;
+				font-weight: bold;
+				color: map.get($theme-light, text-primary);
+			}
+
+			.chatDate {
+				font-size: 0.875rem;
+				color: map.get($theme-light, text-secondary);
+			}
+		}
+
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #ccc;
+			border-radius: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: #f7f7f7;
+		}
+	}
+
+	.newChatButton {
+		overflow: hidden;
+		position: relative;
+		margin: 0 1rem;
+		padding: 0.5rem;
+		border: none;
+		background-color: map.get($theme-light, button-bg);
+		color: map.get($theme-light, text-secondary);
+		border-radius: 4px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: map.get($theme-light, button-hover);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			padding: 50%;
+			width: 10px;
+			height: 10px;
+			background-color: #e8f3ff;
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(1);
+			transition: opacity 0.6s, transform 0.5s;
+		}
+
+		&:hover {
+			background-color: #0056b3;
+		}
+
+		&:active::after {
+			opacity: 0.5;
+			transform: translate(-50%, -50%) scale(0);
+			transition: transform 0s;
+		}
+	}
+}

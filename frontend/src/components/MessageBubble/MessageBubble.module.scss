@@ -1,0 +1,31 @@
+.messageBubble {
+	min-width: 200px;
+	max-width: 80%;
+	margin-bottom: 20px;
+	padding: 3px 15px;
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 1.5;
+	display: flex;
+	flex-direction: column;
+
+	&.user {
+		align-self: flex-start;
+		background-color: #d1e7ff;
+		color: #004085;
+		border: 1px solid #b8daff;
+	}
+
+	&.bot {
+		align-self: flex-end;
+		background-color: #e2e3e5;
+		color: #383d41;
+		border: 1px solid #d6d8db;
+	}
+}
+
+.timestamp {
+	font-size: 10px;
+	color: gray;
+	text-align: right;
+}
